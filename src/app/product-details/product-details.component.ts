@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { products } from '../products';
 
 @Component({
   selector: 'app-product-details',
@@ -7,10 +9,13 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductDetailsComponent implements OnInit {
+  product: any;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.product = products[+params.get('productId')];
+    });
   }
-
 }
