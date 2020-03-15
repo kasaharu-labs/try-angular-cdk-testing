@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -9,10 +10,21 @@ import { CartService } from '../cart.service';
 })
 export class CartComponent implements OnInit {
   items: any;
+  checkoutForm: FormGroup;
 
-  constructor(private cartService: CartService) {}
+  constructor(private formBuilder: FormBuilder, private cartService: CartService) {
+    this.checkoutForm = this.formBuilder.group({ name: '', address: '' });
+  }
 
   ngOnInit(): void {
     this.items = this.cartService.getItems();
+  }
+
+  onSubmit(customerData: any) {
+    // Process checkout data here
+    this.items = this.cartService.clearCart();
+    this.checkoutForm.reset();
+
+    console.warn('Your order has been submitted', customerData);
   }
 }
