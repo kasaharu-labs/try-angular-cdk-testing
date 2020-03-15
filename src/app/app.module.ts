@@ -13,7 +13,6 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HttpClientModule,
     ProductListComponent,
     TopBarComponent,
     ProductAlertsComponent,
@@ -21,7 +20,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     CartComponent,
     ShippingComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
