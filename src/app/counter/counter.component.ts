@@ -8,6 +8,23 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   constructor() {}
+  count = 0;
 
   ngOnInit(): void {}
+
+  countUp() {
+    this.count++;
+  }
+
+  countDown() {
+    this.count--;
+  }
+
+  reset() {
+    this.count = 0;
+  }
+
+  plus100() {
+    this.count += 100;
+  }
 }

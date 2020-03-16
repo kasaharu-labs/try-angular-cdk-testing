@@ -1,1 +1,11 @@
-<p>counter works!</p>
+<div class="counter">
+  <div>
+    <app-displaying-count [count]="count"></app-displaying-count>
+  </div>
+  <div class="action-buttons">
+    <button (click)="countUp()">+</button>
+    <button (click)="countDown()">-</button>
+    <button (click)="reset()">Reset</button>
+    <button (click)="plus100()">+100</button>
+  </div>
+</div>
