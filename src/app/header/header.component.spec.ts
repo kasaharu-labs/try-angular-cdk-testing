@@ -1,7 +1,7 @@
 import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
-import { HeaderComponentHarness } from './testing/header.component.harness';
+import { HeaderHarness } from './testing/header-harness';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -24,8 +24,8 @@ describe('HeaderComponent', () => {
   });
 
   it('Heading text が kasaharu/try-angular-cdk-testing であること', async () => {
-    const headerComponentHarness = await TestbedHarnessEnvironment.harnessForFixture(fixture, HeaderComponentHarness);
-    const titleText = await headerComponentHarness.getTitleText();
+    const headerHarness = await TestbedHarnessEnvironment.harnessForFixture(fixture, HeaderHarness);
+    const titleText = await headerHarness.getTitleText();
 
     expect(titleText).toBe('kasaharu/try-angular-cdk-testing');
   });

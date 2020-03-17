@@ -4,7 +4,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HeaderComponentHarness } from './header/testing/header.component.harness';
+import { HeaderHarness } from './header/testing/header-harness';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -29,8 +29,8 @@ describe('AppComponent', () => {
   });
 
   it(`should have the HeaderComponent`, async () => {
-    const headerComponentHarness = await loader.getHarness(HeaderComponentHarness);
-    const titleText = await headerComponentHarness.getTitleText();
+    const headerHarness = await loader.getHarness(HeaderHarness);
+    const titleText = await headerHarness.getTitleText();
 
     expect(titleText).toBeTruthy();
   });
