@@ -3,10 +3,11 @@ import { ComponentHarness } from '@angular/cdk/testing';
 export class HeaderHarness extends ComponentHarness {
   static hostSelector = 'app-header';
 
-  protected getTitleElement = this.locatorFor('h1');
+  // tslint:disable-next-line: variable-name
+  protected _getTitleElement = this.locatorFor('h1');
 
   async getTitleText() {
-    const titleElement = await this.getTitleElement();
+    const titleElement = await this._getTitleElement();
     return titleElement?.text();
   }
 }
