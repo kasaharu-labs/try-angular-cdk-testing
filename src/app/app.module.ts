@@ -4,23 +4,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartComponent } from './cart/cart.component';
-import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ShippingComponent } from './shipping/shipping.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
+import { CounterComponent } from './counter/counter.component';
+import { DisplayingCountComponent } from './displaying-count/displaying-count.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProductListComponent,
-    TopBarComponent,
-    ProductAlertsComponent,
-    ProductDetailsComponent,
-    CartComponent,
-    ShippingComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, CounterComponent, DisplayingCountComponent],
   imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

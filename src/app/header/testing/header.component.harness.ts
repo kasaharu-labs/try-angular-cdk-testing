@@ -1,7 +1,7 @@
 import { ComponentHarness } from '@angular/cdk/testing';
 
-export class TopBarComponentHarness extends ComponentHarness {
-  static hostSelector = 'app-top-bar';
+export class HeaderComponentHarness extends ComponentHarness {
+  static hostSelector = 'app-header';
 
   protected getTitleElement = this.locatorFor('h1');
 
